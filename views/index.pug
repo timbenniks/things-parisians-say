@@ -1,0 +1,24 @@
+extends layout
+include _tweet
+include _explanation-revision
+
+block header
+  header
+    h1=config.title
+    h2=config.subtitle
+    p=config.description
+    img( src="http://timbenniks.nl/assets/french/french.jpg" )
+
+block content
+  main
+    section.tweets
+      each proverb in proverbs
+        article.tweet(id=proverb.tweetid)
+          +tweet(proverb.proverb, proverb.tweetid)
+          +explanationRevision(proverb)
+
+          .meta
+            p.link
+              a(href="/proverb/"+proverb.id+"#disqus_thread") Add your comment or revision
+              span.disqus-comment-count(data-disqus-identifier=proverb.id)
+
