@@ -19,4 +19,7 @@ block content
 
           .meta
             p.link
-              a(href="/proverb/"+proverb.id+"#disqus_thread") Add your comment or revision
+              a(href="/proverb/"+proverb.id) Add your comment or revision
+                | &nbsp; (
+                span.fb-comments-count(data-href=config.baseurl + "proverb" + proverb.id)
+                | )
