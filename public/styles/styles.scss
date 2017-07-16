@@ -82,14 +82,16 @@ header {
 }
 
 .wrapper {
-  max-width: 850px;
+  max-width: 500px;
   width: 90%;
   margin: 50px auto 0;
 }
 
-// .twitter-tweet,
-// .EmbeddedTweet,
-// .EmbeddedTweet-tweet {
-//   width: 400px !important;
-//   max-width: 400px !important;
-// }
+.proverb {
+  margin: 0 0 25px 0;
+  border-bottom: 1px solid #ccc;
+
+  .twitter-tweet {
+    margin: 0 auto 20px !important;
+  }
+}

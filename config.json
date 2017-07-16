@@ -1,7 +1,7 @@
 {
-  "title": "Things Parisians say",
-  "subtitle": "Amazing French proverbs explained",
-  "description": "My French mates have been teaching me typical things Parisians say. Most of these things are not really on the radar of expats so I thought it would be fun to collect all of them on this page. I've tried my best to explain them as best I can. If the below explanations have errors or make no sense, please reply to the tweet with the proper explanation so I can update this page.",
+  "title": "Things Parisians Say",
+  "subtitle": "French proverbs explained",
+  "description": "My French mates have been teaching me typical things Parisians say. Most of these things are not really on the radar of expats so I thought it would be fun to collect all of them on this page. I've tried my best to explain them as best I can. If the below explanations have errors or make no sense, please reply with your revision so I can update the page.",
   "baseurl": "https://things-parisians-say.herokuapp.com/",
   "apibaseurl": "http://api.elegantcms.io/api/v1",
   "fbappid": "1603124289760454",

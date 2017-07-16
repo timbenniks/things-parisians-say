@@ -11,15 +11,13 @@ block header
 
 block content
   main
-    section.tweets
+    section.proverbs
       each proverb in proverbs
-        article.tweet(id=proverb.tweetid)
+        article.proverb(id=proverb.tweetid)
           +tweet(proverb.proverb, proverb.tweetid)
           +explanationRevision(proverb)
-
-          .meta
-            p.link
-              a(href="/proverb/"+proverb.id) Add your comment or revision
-                | &nbsp; (
-                span.fb-comments-count(data-href=config.baseurl + "proverb" + proverb.id)
-                | )
+          p.meta
+            a(href="/proverb/"+proverb.id) Comment or revise
+              | &nbsp; (
+              span.fb-comments-count(data-href=config.baseurl + "proverb" + proverb.id)
+              | )
