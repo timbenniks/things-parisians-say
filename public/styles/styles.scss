@@ -1,3 +1,95 @@
 body {
-  background: #fff;
+  color: #222;
+  font-family: Georgia, serif;
+  margin: 0;
+  line-height: 1.8;
+  font-size: 100%;
+  background: url(http://timbenniks.nl/assets/bg.jpg) repeat;
 }
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: normal;
+  font-size: 1.5em;
+  line-height: 1.3;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2em;
+  line-height: 1.3;
+  font-style: normal;
+  text-align: center;
+  margin: 0 0 5px 0;
+}
+
+h2 {
+  color: #9C0001;
+  font-size: 1.3em;
+  font-style: italic;
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+h3 {
+  color: #9C0001;
+  font-size: 100%;
+  font-style: italic;
+  margin: 0 0 .5em 0;
+}
+
+p {
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+
+mark {
+  background: lighten( #9C0001, 60 );
+  font-style: italic;
+}
+
+a {
+  text-decoration: underline;
+  color: #9C0001;
+
+  &:hover,
+  &:focus {
+      text-decoration: none;
+      outline: none;
+  }
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  padding: 0.3em;
+  box-sizing: border-box;
+}
+
+header {
+  margin: 0 0 50px 0;
+
+  p {
+    text-align: center;
+    padding: 0 0 20px 0;
+  }
+}
+
+.wrapper {
+  max-width: 850px;
+  width: 90%;
+  margin: 50px auto 0;
+}
+
+// .twitter-tweet,
+// .EmbeddedTweet,
+// .EmbeddedTweet-tweet {
+//   width: 400px !important;
+//   max-width: 400px !important;
+// }

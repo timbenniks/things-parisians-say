@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/timbenniks/things-parisians-say#readme",
   "dependencies": {
+    "apicache": "0.8.7",
     "autoprefixer": "7.1.2",
     "babel-core": "6.25.0",
     "babel-plugin-es6-promise": "1.1.1",
@@ -47,13 +48,5 @@
     "pug": "2.0.0-rc.2",
     "request": "2.81.0",
     "request-promise-native": "1.0.4"
-  },
-  "devDependencies": {
-    "eslint": "3.19.0",
-    "eslint-config-airbnb": "15.0.1",
-    "eslint-plugin-import": "2.6.0",
-    "eslint-plugin-jsx-a11y": "5.0.3",
-    "eslint-plugin-react": "7.1.0",
-    "eslint-plugin-vue": "2.1.0"
   }
 }

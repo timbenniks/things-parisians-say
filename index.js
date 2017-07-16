@@ -5,10 +5,12 @@ const config = require('./config.json')
 const browserify = require('browserify-middleware')
 const sass = require('express-sass-middleware')
 const babelify = require('babelify')
+const apicache = require('apicache')
 const getProverb = require('./models/proverb')
 const getProverbs = require('./models/proverbs')
 
 const app = express()
+const cache = apicache.middleware
 const port = process.env.PORT || '5100'
 
 browserify.settings({
@@ -37,6 +39,8 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
+
+//app.use(cache('20 minutes'))
 
 app.use((req, res, next) => {
   res.header('X-powered-by', config.title)
