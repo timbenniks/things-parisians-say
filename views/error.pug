@@ -1,9 +1,5 @@
-extends layout
-
-block content
-  #main
-    h1 Error
-    if error.status
-      h2=error.status
-    if error.stack
-      pre=error.stack
+h1 Error
+if error.status
+  h2=error.status
+if error.stack
+  pre=error.stack

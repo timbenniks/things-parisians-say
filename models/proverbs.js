@@ -1,5 +1,6 @@
 const getUrl = require('../helpers/getUrl')
 const callApi = require('../helpers/callApi')
+const striptags = require('striptags')
 
 module.exports = () => new Promise((resolve, reject) => {
   const cleanProverbs = proverbs => proverbs.map(proverb => ({
@@ -7,6 +8,7 @@ module.exports = () => new Promise((resolve, reject) => {
     proverb: proverb.attributes.fields.proverb,
     tweetid: proverb.attributes.fields.tweetid,
     explanation: proverb.attributes.fields.explanation,
+    explanationCleaned: striptags(proverb.attributes.fields.explanation),
     revision: proverb.attributes.fields.revision,
     revisedby: proverb.attributes.fields.revisedby
   }))

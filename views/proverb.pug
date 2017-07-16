@@ -2,7 +2,26 @@ extends layout
 include _tweet
 include _explanation-revision
 
+block meta
+  - url = config.baseurl + "proverb/" + proverb.id
+  - title = proverb.proverb
+  - desc = proverb.explanationCleaned
+
+  title=title
+  meta( name="twitter:title" content=title )
+  meta( property="og:title" content=title )
+  meta( property="og:url" content=url )
+  meta( property="og:description" content=desc )
+  meta( name="description" content=desc )
+  meta( name="twitter:description" content=desc )
+
+block header
+  p
+    a(href="/") &lt; Back home
+
 block content
+  - url = config.baseurl + "proverb/" + proverb.id
+
   main
     section.tweets
       article.tweet(id=proverb.id)
@@ -11,7 +30,7 @@ block content
 
         h3 Comment or revise
         .fb-comments(
-          data-href=config.baseurl + "proverb" + proverb.id,
+          data-href=url,
           data-numposts="5",
           data-colorscheme="light",
           data-width="100%" )
