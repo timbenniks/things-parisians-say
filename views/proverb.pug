@@ -9,15 +9,8 @@ block content
         +tweet(proverb.proverb, proverb.tweetid)
         +explanationRevision(proverb)
 
-        .comments#disqus_thread
-        script.
-          var disqus_config = function () {
-            this.page.url = "#{config.baseurl}/proverb/#{proverb.id}";
-            this.page.identifier = "#{proverb.id}";
-          };
-          (function() {
-            var d = document, s = d.createElement('script');
-            s.src = 'https://things-parisians-say.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-          })();
+        .fb-comments(
+          data-href="#{config.baseurl}/proverb/#{proverb.id}",
+          data-numposts="5",
+          data-colorscheme="light",
+          data-width="100%" )

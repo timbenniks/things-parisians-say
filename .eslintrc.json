@@ -8,6 +8,8 @@
     "node": true
   },
 
+  "plugins": ["vue", "html"],
+
   "rules": {
     "linebreak-style": "off",
     "import/no-extraneous-dependencies": "off",
@@ -27,6 +29,7 @@
     "import/first": 0,
     "import/no-unresolved": 1,
     "import/extensions": 1,
+    "vue/jsx-uses-vars": 2,
     "max-len": 0
   }
 }

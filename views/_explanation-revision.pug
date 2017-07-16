@@ -2,6 +2,7 @@ mixin explanationRevision(proverb)
   .explanation-revision
     p.explanation(class=(proverb.revision!=='' ? 'has-revision' : ''))!=proverb.explanation
     if proverb.revision
+      if proverb.revisedby
+        h3.revised-by Revised by #{proverb.revisedby}
       p.revision!=proverb.revision
-    if proverb.revision && proverb.revisedby
-      p.revision!=proverb.revision
+
