@@ -94,4 +94,15 @@ header {
   .twitter-tweet {
     margin: 0 auto 10px !important;
   }
+
+  .meta {
+    display: flex;
+    margin: 0 0 20px 0;
+    justify-content: space-between;
+
+    .comment,
+    .social {
+      flex: 0 1 auto;
+    }
+  }
 }
