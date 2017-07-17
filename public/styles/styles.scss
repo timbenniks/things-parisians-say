@@ -72,6 +72,18 @@ img {
   box-sizing: border-box;
 }
 
+blockquote {
+  padding: 0 0 0 1em;
+  border-left: 0.5em solid #ddd;
+  height: 162px;
+
+  p {
+    margin: 0;
+    padding: 0;
+    font-style: italic;
+  }
+}
+
 header {
   margin: 0 0 50px 0;
 
@@ -91,18 +103,28 @@ header {
   margin: 0 0 25px 0;
   border-bottom: 1px solid #ccc;
 
-  .twitter-tweet {
-    margin: 0 auto 10px !important;
+  .tweet-wrapper {
+    margin: 0 auto 10px;
+    min-height: 162px;
+
+    .twitter-tweet {
+      margin: 0 !important;
+    }
   }
 
   .meta {
     display: flex;
     margin: 0 0 20px 0;
     justify-content: space-between;
+    min-height: 28px;
 
     .comment,
     .social {
       flex: 0 1 auto;
     }
+  }
+
+  .fb-comments-wrapper {
+    min-height: 500px !important;
   }
 }
