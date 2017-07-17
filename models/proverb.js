@@ -20,6 +20,7 @@ module.exports = id => new Promise((resolve, reject) => {
           explanation: proverb.data.attributes.fields.explanation,
           explanationCleaned: striptags(proverb.data.attributes.fields.explanation),
           revision: proverb.data.attributes.fields.revision,
+          revisionCleaned: striptags(proverb.data.attributes.fields.revision),
           revisedby: proverb.data.attributes.fields.revisedby
         }
       })

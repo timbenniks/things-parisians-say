@@ -7,6 +7,9 @@ block meta
   - title = proverb.proverb
   - desc = proverb.explanationCleaned
 
+  if proverb.revisionCleaned
+    - desc = proverb.revisionCleaned
+
   title=title
   meta( name="twitter:title" content=title )
   meta( property="og:title" content=title )
