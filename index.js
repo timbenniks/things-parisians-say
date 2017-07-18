@@ -8,6 +8,7 @@ const babelify = require('babelify')
 const apicache = require('apicache')
 const getProverb = require('./models/proverb')
 const getProverbs = require('./models/proverbs')
+const RSS = require('rss')
 
 const app = express()
 const cache = apicache.middleware
@@ -60,6 +61,42 @@ app.get('/proverb/:id', (req, res) => {
     .then(result => { res.render('proverb', { config, proverb: result.data }) })
     .catch(error => { res.render('error', { config, error }) })
 })
+
+app.get('/rss', (req, res) => {
+  getProverbs()
+    .then(result => {
+      const feedConfig = {
+        title: config.title,
+        description: config.description,
+        feed_url: `${config.baseurl}/rss`,
+        site_url: config.baseurl,
+        image_url: 'http://timbenniks.nl/assets/french/french.jpg',
+        managingEditor: 'Tim Benniks',
+        webMaster: 'Tim Benniks',
+        copyright: '2017 Tim Benniks',
+        language: 'en',
+        categories: ['French', 'Proverbs', 'Learning', 'Culture'],
+        // pubDate: result.data[0].meta.updated_at,
+        ttl: '60'
+      }
+
+      const feed = new RSS(feedConfig)
+
+      result.data.forEach( (item) => {
+        feed.item({
+          title: item.proverb,
+          description: ( proverb.revisionCleaned ) ? proverb.revisionCleaned : roverb.explanationCleaned,
+          url: config.baseurl + "proverb/" + item.id,
+          date: 'May 27, 2012'
+        })
+      })
+
+      res.set('Content-Type', 'text/xml')
+      res.send(feed.xml())
+    })
+    .catch(error => { res.render('error', { config, error }) })
+})
+
 
 app.use('/app.js', browserify(path.join(__dirname, '/public/scripts/app.js')))
 
