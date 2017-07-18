@@ -6,7 +6,7 @@
   "apibaseurl": "http://api.elegantcms.io/api/v1",
   "fbappid": "1603124289760454",
   "urls": {
-    "proverbs": "__apibaseurl__/contents?page[size]=100&sort=updated_at",
+    "proverbs": "__apibaseurl__/contents?page[size]=100",
     "proverb": "__apibaseurl__/contents/__uuid__"
   }
 }

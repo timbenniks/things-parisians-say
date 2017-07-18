@@ -73,14 +73,20 @@ img {
 }
 
 blockquote {
-  padding: 0 0 0 1em;
+  padding: 0.8em 1em 1em;
   border-left: 0.5em solid #ddd;
-  height: 162px;
+  margin: 0 0 0.5em 0;
+  background: rgba(255, 255, 255, 0.8);
 
   p {
     margin: 0;
     padding: 0;
     font-style: italic;
+    font-size: 15px;
+
+    &.proverb-tweet {
+      font-size: 140%;
+    }
   }
 }
 
@@ -94,7 +100,7 @@ header {
 }
 
 .wrapper {
-  max-width: 500px;
+  max-width: 600px;
   width: 90%;
   margin: 20px auto 0;
 }
@@ -105,11 +111,6 @@ header {
 
   .tweet-wrapper {
     margin: 0 auto 10px;
-    min-height: 162px;
-
-    .twitter-tweet {
-      margin: 0 !important;
-    }
   }
 
   .meta {

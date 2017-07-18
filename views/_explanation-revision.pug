@@ -8,7 +8,6 @@ mixin explanationRevision(proverb)
 
   if proverb.revision
     .revision
-      if proverb.revisedby
-        h3 Revised by #{proverb.revisedby}
+      h3 Revision
       p.revision
         mark!=proverb.revision

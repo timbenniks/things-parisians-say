@@ -1,4 +1,5 @@
 mixin tweet( tweet, id )
   .tweet-wrapper
-    blockquote.twitter-tweet( data-lang="en" )
-      p( lang="fr" dir="ltr" ) #{tweet} #[a( href="https://twitter.com/hashtag/learningfrench?src=hash") #learningfrench ] &mdash; Tim Benniks (@timbenniks) #[a(href="https://twitter.com/timbenniks/status/"+id) #{id} ]
+    blockquote.twitter-tweet( data-lang="fr" )
+      p.proverb-tweet #{tweet} #[a( href="https://twitter.com/hashtag/learningfrench?src=hash", target="_blank") #learningfrench ]
+      p source: #[a(href="https://twitter.com/timbenniks/status/"+id, target="_blank") twitter ]
