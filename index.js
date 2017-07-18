@@ -65,10 +65,11 @@ app.get('/proverb/:id', (req, res) => {
 app.get('/rss', (req, res) => {
   getProverbs()
     .then(result => {
+
       const feedConfig = {
         title: config.title,
         description: config.description,
-        feed_url: `${config.baseurl}/rss`,
+        feed_url: `${config.baseurl}rss`,
         site_url: config.baseurl,
         image_url: 'http://timbenniks.nl/assets/french/french.jpg',
         managingEditor: 'Tim Benniks',
@@ -76,7 +77,7 @@ app.get('/rss', (req, res) => {
         copyright: '2017 Tim Benniks',
         language: 'en',
         categories: ['French', 'Proverbs', 'Learning', 'Culture'],
-        // pubDate: result.data[0].meta.updated_at,
+        pubDate: result.data[0].updated_at,
         ttl: '60'
       }
 
@@ -85,9 +86,9 @@ app.get('/rss', (req, res) => {
       result.data.forEach( (item) => {
         feed.item({
           title: item.proverb,
-          description: ( proverb.revisionCleaned ) ? proverb.revisionCleaned : roverb.explanationCleaned,
+          description: ( item.revisionCleaned ) ? item.revisionCleaned : item.explanationCleaned,
           url: config.baseurl + "proverb/" + item.id,
-          date: 'May 27, 2012'
+          date: item.updatedat
         })
       })
 

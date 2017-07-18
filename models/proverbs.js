@@ -10,7 +10,8 @@ module.exports = () => new Promise((resolve, reject) => {
     explanation: proverb.attributes.fields.explanation,
     explanationCleaned: striptags(proverb.attributes.fields.explanation),
     revision: proverb.attributes.fields.revision,
-    revisedby: proverb.attributes.fields.revisedby
+    revisedby: proverb.attributes.fields.revisedby,
+    updatedat: proverb.meta.updated_at
   }))
 
   const url = getUrl('proverbs')
